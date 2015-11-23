@@ -78,7 +78,7 @@ This method takes a large file (using the given `filePath`) and splits it by
 
 The second parameter (`splitBuf`) is used as a delimiter to decide where the next subbuffer starts.
 
-If the third parameter (`includeDelim`) is present and `true`, then delimiters are included to the subbuffers that precede them.
+If the fourth parameter (`includeDelim`) is present and `true`, then delimiters are included to the subbuffers that precede them.
 
 The file is read synchronously in relatively small portions (50 megabytes each).
 
