@@ -1,7 +1,7 @@
 {
 "name": "large-split",
 "main": "large-split.js",
-"version": "0.1.1",
+"version": "0.1.2",
 "description": "A collection of methods that split large Buffers and files.",
 "keywords": ["split", "large", "huge", "Buffer", "Buffers", "file", "files"],
 "author": { "name": "Mithgol the Webmaster" },

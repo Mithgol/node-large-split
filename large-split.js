@@ -23,8 +23,8 @@ var fsplit = function(filePath, splitBuf, includeDelim){
    var fileLength = fs.fstatSync(fileDesc).size;
    var fromIndex = 0;
    var lines = [];
-   var lastBuf = Buffer(0);
-   var readBuf = Buffer(safeLength);
+   var lastBuf = new Buffer(0);
+   var readBuf = new Buffer(safeLength);
 
    while( fromIndex < fileLength ){
       var bytesRead = fs.readSync(
@@ -45,13 +45,14 @@ var fsplit = function(filePath, splitBuf, includeDelim){
 };
 
 var isplit = function(filePath, splitBuf, iterator, includeDelim){
+   /* jshint -W083 */ // ignore “Don't make functions within a loop”
    var safeLength = 50 * 1024 * 1024; // 50 MB
    var fileDesc = fs.openSync(filePath, 'r');
    var fileLength = fs.fstatSync(fileDesc).size;
    var fromIndex = 0;
    var lineNum = 0;
-   var lastBuf = Buffer(0);
-   var readBuf = Buffer(safeLength);
+   var lastBuf = new Buffer(0);
+   var readBuf = new Buffer(safeLength);
 
    while( fromIndex < fileLength ){
       var bytesRead = fs.readSync(
